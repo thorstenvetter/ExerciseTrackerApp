@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Data to make available to the XML via data binding. In this case,
+         the whole ViewModel, so that we can access the LiveData,
+         click handlers, and state variables. -->
+    <data>
+
+        <variable
+            name="addViewModel"
+            type="com.example.android.exercisetracker.screens.add.AddViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.add.AddFragment">
+
+        <Button
+            android:id="@+id/successButton"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="@dimen/min_margin"
+            android:text="@{addViewModel.successScore.toString()}"
+            android:textSize="64sp"
+            android:background="#0FDC00"
+            android:textAppearance="@style/buttonTextStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> addViewModel.addSuccessScore()}" />
+
+        <Button
+            android:id="@+id/failButton"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginEnd="@dimen/min_margin"
+            android:text="@{addViewModel.failScore.toString()}"
+            android:textSize="64sp"
+            android:background="#DC0000"
+            android:textAppearance="@style/buttonTextStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/successButton"
+            android:onClick="@{() -> addViewModel.addFailScore()}" />
+
+        <Button
+            android:id="@+id/resultButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:text="@string/result"
+            android:textAppearance="@style/buttonTextStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{() -> addViewModel.insertDataToDatabase()}" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/start"
+            android:textAppearance="@style/buttonTextStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timerEditText"
+            android:onClick="@{() -> addViewModel.onStart()}" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@{addViewModel.currentTimeString}"
+            android:textSize="64sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/successButton" />
+
+        <EditText
+            android:id="@+id/timerEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="@string/minutes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextView"
+            app:addTextChangedListener="@{addViewModel.timerTextWatcher}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

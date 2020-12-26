@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\Thorsten\\AndroidStudioProjects\\ExerciseTrackerApp-main\\ExerciseTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-land\\fragment_add.xml",
+        "source": "C:\\Users\\Thorsten\\AndroidStudioProjects\\ExerciseTrackerApp-main\\ExerciseTracker\\app\\src\\main\\res\\layout-land\\fragment_add.xml"
+    },
+    {
+        "merged": "C:\\Users\\Thorsten\\AndroidStudioProjects\\ExerciseTrackerApp-main\\ExerciseTracker\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout-land\\fragment_list.xml",
+        "source": "C:\\Users\\Thorsten\\AndroidStudioProjects\\ExerciseTrackerApp-main\\ExerciseTracker\\app\\src\\main\\res\\layout-land\\fragment_list.xml"
+    }
+]
