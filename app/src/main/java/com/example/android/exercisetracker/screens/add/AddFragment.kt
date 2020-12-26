@@ -19,7 +19,7 @@ class AddFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         val binding: FragmentAddBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_add, container, false)
@@ -28,7 +28,7 @@ class AddFragment : Fragment() {
         binding.addViewModel = addViewModel
         binding.lifecycleOwner = this
 
-        addViewModel.eventExerciseNoTimerStarted.observe(viewLifecycleOwner, Observer { hasStarted ->
+        addViewModel.eventSessionNoTimerStarted.observe(viewLifecycleOwner, Observer { hasStarted ->
             if (hasStarted) {
                 binding.startButton.visibility = INVISIBLE
                 binding.timeTextView.visibility = INVISIBLE
@@ -37,16 +37,16 @@ class AddFragment : Fragment() {
             }
         })
 
-        addViewModel.eventExerciseStarted.observe(viewLifecycleOwner, Observer {
+        addViewModel.eventSessionStarted.observe(viewLifecycleOwner, Observer {
             if (it) {
                 binding.timerEditText.visibility = INVISIBLE
-                binding.startButton?.text = "Pause"
+                binding.startButton.text = getString(R.string.start)
             }
         })
 
-        addViewModel.eventExercisePaused.observe(viewLifecycleOwner, Observer {
+        addViewModel.eventSessionPaused.observe(viewLifecycleOwner, Observer {
             if (it) {
-                binding.startButton?.text = "Start"
+                binding.startButton.text = getString(R.string.pause)
                 binding.timerEditText.visibility = INVISIBLE
             }
         })

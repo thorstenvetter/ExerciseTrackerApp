@@ -127,7 +127,7 @@ public class FragmentListBindingImpl extends FragmentListBinding implements com.
                 if (listViewModelJavaLangObjectNull) {
 
 
-                    listViewModel.clearAllExercises();
+                    listViewModel.clearAllSessions();
                 }
                 break;
             }

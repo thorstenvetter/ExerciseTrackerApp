@@ -127,7 +127,7 @@ public class FragmentListBindingLandImpl extends FragmentListBinding implements 
                 if (listViewModelJavaLangObjectNull) {
 
 
-                    listViewModel.clearAllExercises();
+                    listViewModel.clearAllSessions();
                 }
                 break;
             }

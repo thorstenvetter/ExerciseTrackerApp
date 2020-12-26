@@ -27,7 +27,7 @@
         app:layout_constraintStart_toEndOf="@id/dateTextView" />
 
     <TextView
-        android:id="@+id/exerciseTimeTextView"
+        android:id="@+id/sessionTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/min_margin"

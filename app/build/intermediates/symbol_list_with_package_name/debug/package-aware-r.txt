@@ -1388,7 +1388,6 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id exerciseButton
-id exerciseTimeTextView
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1504,6 +1503,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id sessionTimeTextView
 id shortcut
 id showCustom
 id showHome
@@ -1722,7 +1722,6 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string minutes
 string mtrl_chip_close_icon_content_description
-string multiball
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string password_toggle_content_description
@@ -1730,12 +1729,12 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pause
 string result
 string search_menu_title
-string show_all
 string start
 string status_bar_notification_info_overflow
-string timed
+string test
 string variable_start_values
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

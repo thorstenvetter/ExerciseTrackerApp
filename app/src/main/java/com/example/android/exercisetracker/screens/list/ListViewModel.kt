@@ -5,9 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.android.exercisetracker.data.Exercise
-import com.example.android.exercisetracker.data.ExerciseDatabase
-import com.example.android.exercisetracker.data.ExerciseRepository
+import com.example.android.exercisetracker.data.TrainingSession
+import com.example.android.exercisetracker.data.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.TrainingSessionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -17,32 +17,16 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
     val navigateToAdd: LiveData<Boolean>
         get() = _navigateToAdd
 
-    val readAllData: LiveData<List<Exercise>>
-//    val readTimedData: LiveData<List<Exercise>>
-//    val readMultiballData: LiveData<List<Exercise>>
+    val readAllData: LiveData<List<TrainingSession>>
 
-    private val repository: ExerciseRepository
+    private val repository: TrainingSessionRepository
 
     init {
-        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        repository = ExerciseRepository(exerciseDao)
+        val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
+        repository = TrainingSessionRepository(trainingSessionDao)
         readAllData = repository.readAllData
-//        readTimedData = repository.readTimedData
-//        readMultiballData = repository.readMultiballData
         _navigateToAdd.value = false
     }
-
-//    fun showTimedData(){
-//        readAllData = repository.readTimedData
-//    }
-
-//    fun showAllData(){
-//        readAllData = repository.readAllData
-//    }
-
-//    fun showMultiballData(){
-//        readAllData = repository.readMultiballData
-//    }
 
     fun navigateToAdd() {
         _navigateToAdd.value = true
@@ -52,7 +36,7 @@ class ListViewModel(application: Application) : AndroidViewModel(application) {
         _navigateToAdd.value = false
     }
 
-    fun clearAllExercises() {
+    fun clearAllSessions() {
         viewModelScope.launch(Dispatchers.IO) {
             repository.clearAll()
         }

@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
-            android:onClick="@{() -> listViewModel.clearAllExercises()}"
+            android:onClick="@{() -> listViewModel.clearAllSessions()}"
             android:text="@string/clear"
             android:textAppearance="@style/buttonTextStyle"
             app:layout_constraintBottom_toBottomOf="parent"

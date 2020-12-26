@@ -5,14 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.exercisetracker.R
-import com.example.android.exercisetracker.data.Exercise
+import com.example.android.exercisetracker.data.TrainingSession
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
-    private var exerciseList = emptyList<Exercise>()
-    private var timedExerciseList = emptyList<Exercise>()
-    private var multiballExerciseList = emptyList<Exercise>()
+    private var sessionList = emptyList<TrainingSession>()
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
 
@@ -21,19 +19,19 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
     }
 
     override fun getItemCount(): Int {
-        return exerciseList.size
+        return sessionList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = exerciseList[position]
+        val currentItem = sessionList[position]
 
         holder.itemView.dateTextView.text = currentItem.dateString
         holder.itemView.resultTextView.text = currentItem.resultScore
-        holder.itemView.exerciseTimeTextView.text = currentItem.exerciseTime
+        holder.itemView.sessionTimeTextView.text = currentItem.sessionTime
     }
 
-    fun setData(exercise: List<Exercise>) {
-        this.exerciseList = exercise
+    fun setData(trainingSession: List<TrainingSession>) {
+        this.sessionList = trainingSession
         notifyDataSetChanged()
     }
 

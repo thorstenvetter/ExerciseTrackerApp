@@ -6,17 +6,17 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.format.DateUtils
 import androidx.lifecycle.*
-import com.example.android.exercisetracker.data.Exercise
-import com.example.android.exercisetracker.data.ExerciseDatabase
-import com.example.android.exercisetracker.data.ExerciseRepository
+import com.example.android.exercisetracker.data.TrainingSession
+import com.example.android.exercisetracker.data.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.TrainingSessionRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class AddViewModel(application: Application) : AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<Exercise>>
-    private val repository: ExerciseRepository
+    private val readAllData: LiveData<List<TrainingSession>>
+    private val repository: TrainingSessionRepository
 
     //exercise variables
 
@@ -36,22 +36,17 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
 
     //exercise state variables
 
-    private val _eventExerciseStarted = MutableLiveData<Boolean>()
-    val eventExerciseStarted: LiveData<Boolean>
-        get() = _eventExerciseStarted
+    private val _eventSessionStarted = MutableLiveData<Boolean>()
+    val eventSessionStarted: LiveData<Boolean>
+        get() = _eventSessionStarted
 
-    private val _eventExercisePaused = MutableLiveData<Boolean>()
-    val eventExercisePaused: LiveData<Boolean>
-        get() = _eventExercisePaused
+    private val _eventSessionPaused = MutableLiveData<Boolean>()
+    val eventSessionPaused: LiveData<Boolean>
+        get() = _eventSessionPaused
 
-    private val _eventExerciseNoTimerStarted = MutableLiveData<Boolean>()
-    val eventExerciseNoTimerStarted: LiveData<Boolean>
-        get() = _eventExerciseNoTimerStarted
-
-    private val _eventExerciseFinished = MutableLiveData<Boolean>()
-    val eventExerciseFinished: LiveData<Boolean>
-        get() = _eventExerciseFinished
-
+    private val _eventSessionNoTimerStarted = MutableLiveData<Boolean>()
+    val eventSessionNoTimerStarted: LiveData<Boolean>
+        get() = _eventSessionNoTimerStarted
 
     //timer variables
     private lateinit var timer: CountDownTimer
@@ -82,16 +77,16 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
         get() = _navigateToList
 
     init {
-        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        repository = ExerciseRepository(exerciseDao)
+        val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
+        repository = TrainingSessionRepository(trainingSessionDao)
         readAllData = repository.readAllData
         _navigateToList.value = false
         _successScore.value = 0
         _failScore.value = 0
         _currentTime.value = 0L
-        _eventExerciseStarted.value = false
-        _eventExerciseNoTimerStarted.value = false
-        _eventExercisePaused.value = false
+        _eventSessionStarted.value = false
+        _eventSessionNoTimerStarted.value = false
+        _eventSessionPaused.value = false
         _timerTime.value = 0L
     }
 
@@ -131,7 +126,6 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
 
             override fun onFinish() {
                 insertDataToDatabase()
-                _eventExerciseFinished.value = true
             }
         }.start()
     }
@@ -146,19 +140,19 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
                         startTimer(countDownTime)
                     }
                 } else {
-                    _eventExerciseNoTimerStarted.value = true
+                    _eventSessionNoTimerStarted.value = true
                 }
                 isStarted = true
                 isResumed = true
                 isPaused = false
-                _eventExerciseStarted.value = true
+                _eventSessionStarted.value = true
             }
             !isPaused -> {
                 timer.cancel()
                 isPaused = true
                 isResumed = false
-                _eventExercisePaused.value = true
-                _eventExerciseStarted.value = false
+                _eventSessionPaused.value = true
+                _eventSessionStarted.value = false
             }
             !isResumed -> {
                 if (_currentTime.value != 0L) {
@@ -169,8 +163,8 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
                 }
                 isResumed = true
                 isPaused = false
-                _eventExerciseStarted.value = true
-                _eventExercisePaused.value = false
+                _eventSessionStarted.value = true
+                _eventSessionPaused.value = false
             }
         }
     }
@@ -195,7 +189,7 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
     fun insertDataToDatabase() {
 
         if (isStarted) {
-            if (_eventExerciseNoTimerStarted.value == false) {
+            if (_eventSessionNoTimerStarted.value == false) {
                 timer.cancel()
             }
             totalScore =
@@ -207,16 +201,16 @@ class AddViewModel(application: Application) : AndroidViewModel(application) {
             }
             _date.value = LocalDate.now()
             result = "$resultScore% (${_successScore.value}/$totalScore)"
-            val exercise = Exercise(0, _date.value.toString(), _successScore.value.toString(),
+            val session = TrainingSession(0, _date.value.toString(), _successScore.value.toString(),
                     _failScore.value.toString(), totalScore.toString(), result, timeString)
-            addExercise(exercise)
+            addSession(session)
             _navigateToList.value = true
         }
     }
 
-    private fun addExercise(exercise: Exercise) {
+    private fun addSession(trainingSession: TrainingSession) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addExercise(exercise)
+            repository.addTrainingSession(trainingSession)
         }
     }
 }

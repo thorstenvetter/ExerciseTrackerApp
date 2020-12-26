@@ -18,7 +18,7 @@ class ListFragment : Fragment() {
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         val binding: FragmentListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_list, container, false)
 
@@ -30,8 +30,8 @@ class ListFragment : Fragment() {
         //ListViewModel
         val listViewModel = ViewModelProvider(this).get(ListViewModel::class.java)
 
-        listViewModel.readAllData.observe(viewLifecycleOwner, Observer { exercise ->
-            adapter.setData(exercise)
+        listViewModel.readAllData.observe(viewLifecycleOwner, Observer { session ->
+            adapter.setData(session)
         })
 
         binding.listViewModel = listViewModel
