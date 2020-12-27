@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Data to make available to the XML via data binding. In this case,
+         the whole ViewModel, so that we can access the LiveData,
+         click handlers, and state variables. -->
+    <data>
+
+        <variable
+            name="sessionListViewModel"
+            type="com.example.android.exercisetracker.screens.sessionList.SessionListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.sessionList.SessionListFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/min_margin"
+            android:layout_marginBottom="@dimen/min_margin"
+            app:layout_constraintBottom_toTopOf="@id/clearButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exerciseButton" />
+
+        <Button
+            android:id="@+id/exerciseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exercise"
+            android:textAppearance="@style/buttonTextStyle"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> sessionListViewModel.navigateToAdd()}" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:onClick="@{() -> sessionListViewModel.clearAllSessions()}"
+            android:text="@string/clear"
+            android:textAppearance="@style/buttonTextStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!--        <RadioGroup-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/recyclerview"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent">-->
+
+        <!--            <RadioButton-->
+        <!--                android:id="@+id/timedRadioButton"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Timed"-->
+        <!--                android:checked="false"-->
+        <!--                android:onClick="@{() -> listViewModel.showTimedData()}"/>-->
+
+        <!--            <RadioButton-->
+        <!--                android:id="@+id/MultiballRadioButton"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Multiball"-->
+        <!--                android:checked="false"-->
+        <!--                android:onClick="@{() -> listViewModel.showMultiballData()}"/>-->
+
+        <!--            <RadioButton-->
+        <!--                android:id="@+id/allRadioButton"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="All"-->
+        <!--                android:checked="true"-->
+        <!--                android:onClick="@{() -> listViewModel.showAllData()}"/>-->
+        <!--        </RadioGroup>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -6,10 +6,10 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
-import com.example.android.exercisetracker.databinding.FragmentAddBindingImpl;
-import com.example.android.exercisetracker.databinding.FragmentAddBindingLandImpl;
-import com.example.android.exercisetracker.databinding.FragmentListBindingImpl;
-import com.example.android.exercisetracker.databinding.FragmentListBindingLandImpl;
+import com.example.android.exercisetracker.databinding.FragmentSessionAddBindingImpl;
+import com.example.android.exercisetracker.databinding.FragmentSessionAddBindingLandImpl;
+import com.example.android.exercisetracker.databinding.FragmentSessionListBindingImpl;
+import com.example.android.exercisetracker.databinding.FragmentSessionListBindingLandImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -21,15 +21,15 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_FRAGMENTADD = 1;
+  private static final int LAYOUT_FRAGMENTSESSIONADD = 1;
 
-  private static final int LAYOUT_FRAGMENTLIST = 2;
+  private static final int LAYOUT_FRAGMENTSESSIONLIST = 2;
 
   private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
 
   static {
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.android.exercisetracker.R.layout.fragment_add, LAYOUT_FRAGMENTADD);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.android.exercisetracker.R.layout.fragment_list, LAYOUT_FRAGMENTLIST);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.android.exercisetracker.R.layout.fragment_session_add, LAYOUT_FRAGMENTSESSIONADD);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.android.exercisetracker.R.layout.fragment_session_list, LAYOUT_FRAGMENTSESSIONLIST);
   }
 
   @Override
@@ -41,23 +41,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
-        case  LAYOUT_FRAGMENTADD: {
-          if ("layout-land/fragment_add_0".equals(tag)) {
-            return new FragmentAddBindingLandImpl(component, view);
+        case  LAYOUT_FRAGMENTSESSIONADD: {
+          if ("layout-land/fragment_session_add_0".equals(tag)) {
+            return new FragmentSessionAddBindingLandImpl(component, view);
           }
-          if ("layout/fragment_add_0".equals(tag)) {
-            return new FragmentAddBindingImpl(component, view);
+          if ("layout/fragment_session_add_0".equals(tag)) {
+            return new FragmentSessionAddBindingImpl(component, view);
           }
-          throw new IllegalArgumentException("The tag for fragment_add is invalid. Received: " + tag);
+          throw new IllegalArgumentException("The tag for fragment_session_add is invalid. Received: " + tag);
         }
-        case  LAYOUT_FRAGMENTLIST: {
-          if ("layout/fragment_list_0".equals(tag)) {
-            return new FragmentListBindingImpl(component, view);
+        case  LAYOUT_FRAGMENTSESSIONLIST: {
+          if ("layout-land/fragment_session_list_0".equals(tag)) {
+            return new FragmentSessionListBindingLandImpl(component, view);
           }
-          if ("layout-land/fragment_list_0".equals(tag)) {
-            return new FragmentListBindingLandImpl(component, view);
+          if ("layout/fragment_session_list_0".equals(tag)) {
+            return new FragmentSessionListBindingImpl(component, view);
           }
-          throw new IllegalArgumentException("The tag for fragment_list is invalid. Received: " + tag);
+          throw new IllegalArgumentException("The tag for fragment_session_list is invalid. Received: " + tag);
         }
       }
     }
@@ -104,12 +104,14 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(3);
+    static final SparseArray<String> sKeys = new SparseArray<String>(5);
 
     static {
       sKeys.put(0, "_all");
       sKeys.put(1, "addViewModel");
       sKeys.put(2, "listViewModel");
+      sKeys.put(3, "sessionAddViewModel");
+      sKeys.put(4, "sessionListViewModel");
     }
   }
 
@@ -117,10 +119,10 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
 
     static {
-      sKeys.put("layout-land/fragment_add_0", com.example.android.exercisetracker.R.layout.fragment_add);
-      sKeys.put("layout/fragment_add_0", com.example.android.exercisetracker.R.layout.fragment_add);
-      sKeys.put("layout/fragment_list_0", com.example.android.exercisetracker.R.layout.fragment_list);
-      sKeys.put("layout-land/fragment_list_0", com.example.android.exercisetracker.R.layout.fragment_list);
+      sKeys.put("layout-land/fragment_session_add_0", com.example.android.exercisetracker.R.layout.fragment_session_add);
+      sKeys.put("layout/fragment_session_add_0", com.example.android.exercisetracker.R.layout.fragment_session_add);
+      sKeys.put("layout-land/fragment_session_list_0", com.example.android.exercisetracker.R.layout.fragment_session_list);
+      sKeys.put("layout/fragment_session_list_0", com.example.android.exercisetracker.R.layout.fragment_session_list);
     }
   }
 }
