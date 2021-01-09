@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.exercisetracker.R
-import com.example.android.exercisetracker.data.TrainingSession
+import com.example.android.exercisetracker.data.trainingsessions.TrainingSession
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class SessionListAdapter : RecyclerView.Adapter<SessionListAdapter.MyViewHolder>() {

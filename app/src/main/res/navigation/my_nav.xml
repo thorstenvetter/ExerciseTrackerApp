@@ -3,28 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/sessionListFragment">
+    app:startDestination="@id/exerciseAddFragment">
 
     <fragment
         android:id="@+id/sessionListFragment"
         android:name="com.example.android.exercisetracker.screens.sessionList.SessionListFragment"
-        android:label="List"
         tools:layout="@layout/fragment_session_list">
         <action
             android:id="@+id/action_sessionListFragment_to_sessionAddFragment"
             app:destination="@id/sessionAddFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
+        <argument
+            android:name="selectedExercise"
+            app:argType="com.example.android.exercisetracker.data.exercises.Exercise" />
     </fragment>
+
     <fragment
         android:id="@+id/sessionAddFragment"
         android:name="com.example.android.exercisetracker.screens.sessionAdd.SessionAddFragment"
-        android:label="Add"
         tools:layout="@layout/fragment_session_add">
         <action
             android:id="@+id/action_sessionAddFragment_to_sessionListFragment"
             app:destination="@id/sessionListFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exerciseListFragment"
+        android:name="com.example.android.exercisetracker.screens.exerciseList.ExerciseListFragment"
+        android:label="exercise_list_fragment"
+        tools:layout="@layout/exercise_list_fragment" >
+        <action
+            android:id="@+id/action_exerciseListFragment_to_exerciseAddFragment"
+            app:destination="@id/exerciseAddFragment" />
+        <action
+            android:id="@+id/action_exerciseListFragment_to_sessionListFragment"
+            app:destination="@id/sessionListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exerciseAddFragment"
+        android:name="com.example.android.exercisetracker.screens.exerciseAdd.ExerciseAddFragment"
+        tools:layout="@layout/exercise_add_fragment" >
+        <action
+            android:id="@+id/action_exerciseAddFragment_to_exerciseListFragment"
+            app:destination="@id/exerciseListFragment" />
     </fragment>
 </navigation>

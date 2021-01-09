@@ -1,4 +1,4 @@
-package com.example.android.exercisetracker.data
+package com.example.android.exercisetracker.data.trainingsessions
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 data class TrainingSession(
         @PrimaryKey(autoGenerate = true)
         val id: Int,
-//        val exercise: Exercise,
+//        val exerciseName: String,
         val dateString: String,
         val successScore: String,
         val failScore: String,

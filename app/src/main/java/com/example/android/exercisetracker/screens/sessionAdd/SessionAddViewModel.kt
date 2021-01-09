@@ -6,17 +6,17 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.format.DateUtils
 import androidx.lifecycle.*
-import com.example.android.exercisetracker.data.TrainingSession
-import com.example.android.exercisetracker.data.TrainingSessionDatabase
-import com.example.android.exercisetracker.data.TrainingSessionRepository
+import com.example.android.exercisetracker.data.trainingsessions.TrainingSession
+import com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.Repository
+import com.example.android.exercisetracker.data.exercises.ExerciseDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
 class SessionAddViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<TrainingSession>>
-    private val repository: TrainingSessionRepository
+    private val repository: Repository
 
     //exercise variables
 
@@ -77,9 +77,9 @@ class SessionAddViewModel(application: Application) : AndroidViewModel(applicati
         get() = _navigateToList
 
     init {
+        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
         val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
-        repository = TrainingSessionRepository(trainingSessionDao)
-        readAllData = repository.readAllData
+        repository = Repository(exerciseDao, trainingSessionDao)
         _navigateToList.value = false
         _successScore.value = 0
         _failScore.value = 0

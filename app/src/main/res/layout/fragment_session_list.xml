@@ -8,7 +8,6 @@
          the whole ViewModel, so that we can access the LiveData,
          click handlers, and state variables. -->
     <data>
-
         <variable
             name="sessionListViewModel"
             type="com.example.android.exercisetracker.screens.sessionList.SessionListViewModel" />

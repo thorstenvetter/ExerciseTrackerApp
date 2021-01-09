@@ -1,4 +1,4 @@
-package com.example.android.exercisetracker.data
+package com.example.android.exercisetracker.data.trainingsessions
 
 
 import android.content.Context

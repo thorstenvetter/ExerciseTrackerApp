@@ -12,6 +12,7 @@ MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\Thorsten\.gradle\cac
 MERGED from [androidx.activity:activity-ktx:1.1.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\87d83ae15fdf64364e6f2e39d8dc52a9\jetified-activity-ktx-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\b28dce88ce0509e1f48314c73ef3c080\jetified-lifecycle-viewmodel-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\33c86a85bc0171753d173ffe303c225a\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\82abac466f55a94fb72a45bf082f46c9\jetified-lifecycle-livedata-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-adapters:4.0.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\123aabd44134019cddf1ac95ef2a63b8\databinding-adapters-4.0.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:4.0.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\79b060095425f3c0ef764a073745df1c\databinding-runtime-4.0.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.3.1] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\9c84b9709ae4a2e83b0e4bf7b1df0aa2\navigation-common-ktx-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -111,7 +112,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Th
 	android:allowBackup
 		ADDED from C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:11:9-47
+		ADDED from C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:11:9-59
 activity#com.example.android.exercisetracker.MainActivity
 ADDED from C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:12:9-18:20
 	android:name
@@ -152,6 +153,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Thorsten
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\b28dce88ce0509e1f48314c73ef3c080\jetified-lifecycle-viewmodel-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\33c86a85bc0171753d173ffe303c225a\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\33c86a85bc0171753d173ffe303c225a\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\82abac466f55a94fb72a45bf082f46c9\jetified-lifecycle-livedata-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\82abac466f55a94fb72a45bf082f46c9\jetified-lifecycle-livedata-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.databinding:databinding-adapters:4.0.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\123aabd44134019cddf1ac95ef2a63b8\databinding-adapters-4.0.2\AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-adapters:4.0.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\123aabd44134019cddf1ac95ef2a63b8\databinding-adapters-4.0.2\AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:4.0.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\79b060095425f3c0ef764a073745df1c\databinding-runtime-4.0.2\AndroidManifest.xml:22:5-44

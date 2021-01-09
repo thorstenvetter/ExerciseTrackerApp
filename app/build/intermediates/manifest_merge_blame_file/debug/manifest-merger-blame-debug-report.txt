@@ -27,8 +27,8 @@
 19        android:supportsRtl="true"
 19-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:10:9-35
 20        android:testOnly="true"
-21        android:theme="@style/Theme.AppCompat" >
-21-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:11:9-47
+21        android:theme="@style/Theme.AppCompat.NoActionBar" >
+21-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:11:9-59
 22        <activity android:name="com.example.android.exercisetracker.MainActivity" >
 22-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:12:9-18:20
 22-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:12:19-47

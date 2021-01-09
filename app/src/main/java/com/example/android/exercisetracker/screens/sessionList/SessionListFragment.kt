@@ -22,19 +22,24 @@ class SessionListFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentSessionListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_session_list, container, false)
 
+        @Suppress("UNUSED_VARIABLE")
+        val application = requireNotNull(activity).application
+
         //Recyclerview
         val adapter = SessionListAdapter()
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
         //ListViewModel
-        val sessionListViewModel = ViewModelProvider(this).get(SessionListViewModel::class.java)
+        val exercise = SessionListFragmentArgs.fromBundle(requireArguments()).selectedExercise!!
+        val viewModelFactory = SessionListViewModelFactory(exercise, application)
 
-        sessionListViewModel.readAllData.observe(viewLifecycleOwner, Observer { session ->
-            adapter.setData(session)
-        })
+        val sessionListViewModel = ViewModelProvider(this, viewModelFactory).get(SessionListViewModel::class.java)
 
         binding.sessionListViewModel = sessionListViewModel
+//        sessionListViewModel.readAllData.observe(viewLifecycleOwner, Observer { session ->
+//            adapter.setData(session)
+//        })
         binding.lifecycleOwner = this
 
         sessionListViewModel.navigateToAdd.observe(viewLifecycleOwner, Observer {
