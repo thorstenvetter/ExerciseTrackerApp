@@ -5,15 +5,17 @@ public class BR {
 
   public static final int addViewModel = 1;
 
-  public static final int exercise = 2;
+  public static final int clickListener = 2;
 
-  public static final int exerciseAddViewModel = 3;
+  public static final int exercise = 3;
 
-  public static final int exerciseListViewModel = 4;
+  public static final int exerciseAddViewModel = 4;
 
-  public static final int listViewModel = 5;
+  public static final int exerciseListViewModel = 5;
 
-  public static final int sessionAddViewModel = 6;
+  public static final int listViewModel = 6;
 
-  public static final int sessionListViewModel = 7;
+  public static final int sessionAddViewModel = 7;
+
+  public static final int sessionListViewModel = 8;
 }

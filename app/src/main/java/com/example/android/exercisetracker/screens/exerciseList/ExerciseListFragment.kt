@@ -24,9 +24,12 @@ class ExerciseListFragment : Fragment() {
         val exerciseListViewModel = ViewModelProvider(this).get(ExerciseListViewModel::class.java)
 
         //Recyclerview
-        binding.recyclerview.adapter = ExerciseListAdapter(ExerciseListAdapter.OnClickListener{
-            exerciseListViewModel.displayExercise(it)
-        })
+//        binding.recyclerview.adapter = ExerciseListAdapter(ExerciseListAdapter.OnClickListener{
+//            exerciseListViewModel.displayExercise(it)
+//        })
+
+        val adapter = ExerciseListAdapter()
+        binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
 //        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercise ->
@@ -36,14 +39,18 @@ class ExerciseListFragment : Fragment() {
         binding.exerciseListViewModel = exerciseListViewModel
         binding.lifecycleOwner = this
 
-        exerciseListViewModel.navigateToExerciseAdd.observe(viewLifecycleOwner, Observer {
-            if (it == true) {
-                this.findNavController().navigate(
-                    ExerciseListFragmentDirections.actionExerciseListFragmentToExerciseAddFragment()
-                )
-                exerciseListViewModel.doneNavigating()
-            }
+        exerciseListViewModel.exercises.observe(viewLifecycleOwner, Observer { exercises ->
+            adapter.submitList(exercises)
         })
+
+//        exerciseListViewModel.navigateToExerciseAdd.observe(viewLifecycleOwner, Observer {
+//            if (it == true) {
+//                this.findNavController().navigate(
+//                    ExerciseListFragmentDirections.actionExerciseListFragmentToExerciseAddFragment()
+//                )
+//                exerciseListViewModel.doneNavigating()
+//            }
+//        })
 
 //        exerciseListViewModel.navigateToSessionList.observe(viewLifecycleOwner, Observer {
 //            if (null != it){

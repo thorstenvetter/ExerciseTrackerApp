@@ -1,4 +1,4 @@
-#Sat Jan 09 22:46:20 CET 2021
+#Sun Jan 10 22:41:36 CET 2021
 base.0=C\:\\Users\\Thorsten\\AndroidStudioProjects\\ExerciseTrackerApp-main\\ExerciseTracker\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

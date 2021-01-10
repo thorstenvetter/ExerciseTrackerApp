@@ -31,11 +31,11 @@ class SessionListFragment : Fragment() {
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
         //ListViewModel
-        val exercise = SessionListFragmentArgs.fromBundle(requireArguments()).selectedExercise!!
-        val viewModelFactory = SessionListViewModelFactory(exercise, application)
+//        val exercise = SessionListFragmentArgs.fromBundle(requireArguments()).selectedExercise!!
+//        val viewModelFactory = SessionListViewModelFactory(exercise, application)
 
-        val sessionListViewModel = ViewModelProvider(this, viewModelFactory).get(SessionListViewModel::class.java)
-
+//        val sessionListViewModel = ViewModelProvider(this, viewModelFactory).get(SessionListViewModel::class.java)
+        val sessionListViewModel = ViewModelProvider(this).get(SessionListViewModel::class.java)
         binding.sessionListViewModel = sessionListViewModel
 //        sessionListViewModel.readAllData.observe(viewLifecycleOwner, Observer { session ->
 //            adapter.setData(session)

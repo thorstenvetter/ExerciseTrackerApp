@@ -14,9 +14,9 @@
             app:destination="@id/sessionAddFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
-<!--        <argument-->
-<!--            android:name="selectedExercise"-->
-<!--            app:argType="com.example.android.exercisetracker.data.exercises.Exercise" />-->
+        <argument
+            android:name="selectedExercise"
+            app:argType="com.example.android.exercisetracker.data.exercises.Exercise" />
     </fragment>
 
     <fragment
