@@ -16,10 +16,6 @@ class Repository(private val exerciseDao: ExerciseDao,
         exerciseDao.addExercise(exercise)
     }
 
-    suspend fun clearAllExercises(){
-        exerciseDao.clear()
-    }
-
     suspend fun addTrainingSession(trainingSession: TrainingSession) {
         trainingSessionDao.addSession(trainingSession)
     }

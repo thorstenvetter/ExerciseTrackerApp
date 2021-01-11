@@ -15,9 +15,6 @@ interface ExerciseDao {
     @Query("SELECT * FROM exercises_table")
     fun readAllExercises(): LiveData<List<Exercise>>
 
-//    @Query("Select * FROM exercises_table WHERE name = :exerciseName")
-//    fun readExercise(exerciseName: String)
-
     @Query("DELETE FROM exercises_table")
     suspend fun clear()
 }

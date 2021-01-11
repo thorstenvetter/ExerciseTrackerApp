@@ -16,50 +16,37 @@ import com.example.android.exercisetracker.databinding.ExerciseListFragmentBindi
 class ExerciseListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
 
         val binding: ExerciseListFragmentBinding = DataBindingUtil.inflate(layoutInflater, R.layout.exercise_list_fragment, container, false)
 
         //ListViewModel
         val exerciseListViewModel = ViewModelProvider(this).get(ExerciseListViewModel::class.java)
 
-        //Recyclerview
-//        binding.recyclerview.adapter = ExerciseListAdapter(ExerciseListAdapter.OnClickListener{
-//            exerciseListViewModel.displayExercise(it)
-//        })
-
+        //RecyclerView
         val adapter = ExerciseListAdapter()
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
-//        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercise ->
-//            adapter.setData(exercise)
-//        })
+        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercise ->
+            adapter.setData(exercise)
+        })
 
         binding.exerciseListViewModel = exerciseListViewModel
         binding.lifecycleOwner = this
 
-        exerciseListViewModel.exercises.observe(viewLifecycleOwner, Observer { exercises ->
-            adapter.submitList(exercises)
+        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercises ->
+            adapter.setData(exercises)
         })
 
-//        exerciseListViewModel.navigateToExerciseAdd.observe(viewLifecycleOwner, Observer {
-//            if (it == true) {
-//                this.findNavController().navigate(
-//                    ExerciseListFragmentDirections.actionExerciseListFragmentToExerciseAddFragment()
-//                )
-//                exerciseListViewModel.doneNavigating()
-//            }
-//        })
-
-//        exerciseListViewModel.navigateToSessionList.observe(viewLifecycleOwner, Observer {
-//            if (null != it){
-//                this.findNavController().navigate(
-//                        ExerciseListFragmentDirections.actionExerciseListFragmentToSessionListFragment(it)
-//                )
-//                exerciseListViewModel.displayExerciseComplete()
-//            }
-//        })
+        exerciseListViewModel.navigateToExerciseAdd.observe(viewLifecycleOwner, Observer {
+            if (it == true) {
+                this.findNavController().navigate(
+                    ExerciseListFragmentDirections.actionExerciseListFragmentToExerciseAddFragment()
+                )
+                exerciseListViewModel.doneNavigating()
+            }
+        })
 
         return binding.root
     }

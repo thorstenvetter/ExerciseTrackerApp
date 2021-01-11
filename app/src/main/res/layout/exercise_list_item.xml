@@ -23,7 +23,6 @@
             android:layout_marginTop="@dimen/min_margin"
             android:layout_marginStart="@dimen/min_margin"
             android:text="@string/exercisename"
-            android:onClick="@{clickListener}"
             android:textAppearance="@style/listItemTextStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

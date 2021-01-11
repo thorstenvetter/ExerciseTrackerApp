@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -14,7 +15,7 @@ import com.example.android.exercisetracker.databinding.ExerciseAddFragmentBindin
 
 class ExerciseAddFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         val binding: ExerciseAddFragmentBinding =
                 DataBindingUtil.inflate(layoutInflater, R.layout.exercise_add_fragment, container, false)
@@ -23,11 +24,15 @@ class ExerciseAddFragment : Fragment() {
         binding.exerciseAddViewModel = exerciseAddViewModel
         binding.lifecycleOwner = this
 
-        binding.addButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View) {
+        binding.addButton.setOnClickListener {
+            if (binding.exerciseNameEditText.text.toString() != "") {
                 val exerciseName = binding.exerciseNameEditText.text
                 exerciseAddViewModel.insertDataToDatabase(exerciseName.toString())
-            } })
+            }
+            else{
+                Toast.makeText(context, "Please select a name for your exercise", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         exerciseAddViewModel.navigateToExerciseList.observe(viewLifecycleOwner, Observer {
             if (it == true) {

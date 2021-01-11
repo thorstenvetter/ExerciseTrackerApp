@@ -19,8 +19,6 @@ class ExerciseListViewModel(application: Application) : AndroidViewModel(applica
 
     val readAllExercises: LiveData<List<Exercise>>
 
-
-
     private val repository: Repository
 
     init {
@@ -40,18 +38,4 @@ class ExerciseListViewModel(application: Application) : AndroidViewModel(applica
     fun doneNavigating(){
         _navigateToExerciseAdd.value = false
     }
-
-    fun displayExercise(){
-        _navigateToSessionList.value = true
-    }
-
-    fun displayExerciseComplete(){
-        _navigateToSessionList.value = null
-    }
-
-//    fun clearAllExercises(){
-//        viewModelScope.launch(Dispatchers.IO) {
-//            repository.clearAllExercises()
-//        }
-//    }
 }

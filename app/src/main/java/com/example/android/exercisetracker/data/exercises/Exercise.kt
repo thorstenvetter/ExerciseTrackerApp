@@ -8,6 +8,4 @@ data class Exercise(
         @PrimaryKey(autoGenerate = true)
         val id: Int,
         val name: String
-//        val description: String,
-//        val technique: String
 )
