@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/min_margin">
+        android:layout_margin="@dimen/min_margin"
+        android:onClick="@{clickListener}">
 
         <TextView
             android:id="@+id/nameTextView"
@@ -22,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/min_margin"
             android:layout_marginStart="@dimen/min_margin"
-            android:text="@string/exercisename"
+            android:text="@{exercise.name}"
             android:textAppearance="@style/listItemTextStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

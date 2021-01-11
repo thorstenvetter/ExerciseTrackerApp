@@ -10,34 +10,61 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.android.exercisetracker.R
 import com.example.android.exercisetracker.data.exercises.Exercise
 import com.example.android.exercisetracker.databinding.ExerciseListItemBinding
+import com.example.android.exercisetracker.generated.callback.OnClickListener
 import com.example.android.exercisetracker.screens.sessionList.SessionListAdapter
 import kotlinx.android.synthetic.main.exercise_list_item.view.*
 import kotlinx.android.synthetic.main.list_item.view.*
 
-class ExerciseListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ExerciseListAdapter: ListAdapter<Exercise, RecyclerView.ViewHolder>(ExerciseDiffCallback()) {
 
-    private var exerciseList = emptyList<Exercise>()
-
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {}
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.exercise_list_item, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return ExerciseViewHolder(
+            ExerciseListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
         )
     }
 
-    override fun getItemCount(): Int {
-        return exerciseList.size
-    }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val currentItem = exerciseList[position]
-
-        holder.itemView.nameTextView.text = currentItem.name
+        val exercise = getItem(position)
+        (holder as ExerciseViewHolder).bind(exercise)
     }
 
-    fun setData(exercises: List<Exercise>){
-        this.exerciseList = exercises
-        notifyDataSetChanged()
+    class ExerciseViewHolder(private val binding: ExerciseListItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.setClickListener {
+                binding.exercise?.let { exercise ->
+                    navigateToExercise(exercise, it)
+                }
+            }
+        }
+
+        private fun navigateToExercise(exercise: Exercise, view: View) {
+            val direction = ExerciseListFragmentDirections
+                .actionExerciseListFragmentToSessionListFragment()
+            view.findNavController().navigate(direction)
+        }
+
+        fun bind(item: Exercise) {
+            binding.apply {
+                exercise = item
+                executePendingBindings()
+            }
+        }
     }
 }
+
+private class ExerciseDiffCallback: DiffUtil.ItemCallback<Exercise>(){
+    override fun areItemsTheSame(oldItem: Exercise, newItem: Exercise): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Exercise, newItem: Exercise): Boolean {
+        return oldItem == newItem
+    }
+}
+

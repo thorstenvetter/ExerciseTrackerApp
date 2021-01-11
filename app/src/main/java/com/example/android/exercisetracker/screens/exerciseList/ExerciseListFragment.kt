@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -25,19 +26,20 @@ class ExerciseListFragment : Fragment() {
 
         //RecyclerView
         val adapter = ExerciseListAdapter()
+
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
 
         exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercise ->
-            adapter.setData(exercise)
+            adapter.submitList(exercise)
         })
 
         binding.exerciseListViewModel = exerciseListViewModel
         binding.lifecycleOwner = this
 
-        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercises ->
-            adapter.setData(exercises)
-        })
+//        exerciseListViewModel.readAllExercises.observe(viewLifecycleOwner, Observer { exercises ->
+//            adapter.setData(exercises)
+//        })
 
         exerciseListViewModel.navigateToExerciseAdd.observe(viewLifecycleOwner, Observer {
             if (it == true) {
