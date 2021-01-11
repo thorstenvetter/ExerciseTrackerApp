@@ -15,9 +15,6 @@ interface TrainingSessionDao {
     @Query("SELECT * FROM trainingSession_table ORDER BY id DESC")
     fun readAllData(): LiveData<List<TrainingSession>>
 
-    @Query("Select * FROM trainingSession_table WHERE exerciseName = :exerciseName")
-    fun readExerciseSessions(exerciseName: String)
-
     @Query("DELETE FROM trainingSession_table")
     suspend fun clear()
 }

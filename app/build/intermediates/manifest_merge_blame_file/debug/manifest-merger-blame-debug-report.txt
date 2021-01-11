@@ -15,7 +15,7 @@
 12        android:allowBackup="true"
 12-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.3.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\6b6baa0b895d5d251fa7fffbad6e317d\core-1.3.2\AndroidManifest.xml:24:18-86
+13-->[androidx.core:core:1.3.2] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\e55f68e857155f98d9906619fae8817c\core-1.3.2\AndroidManifest.xml:24:18-86
 14        android:debuggable="true"
 15        android:extractNativeLibs="false"
 16        android:icon="@mipmap/ic_launcher"
@@ -52,24 +52,24 @@
 32-->C:\Users\Thorsten\AndroidStudioProjects\ExerciseTrackerApp-main\ExerciseTracker\app\src\main\AndroidManifest.xml:21:13-54
 33
 34        <service
-34-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\0c68a33d93eaf7d89e2483b7bf66ea72\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+34-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3c9f880b265ffa959111bc61dc34908c\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
 35            android:name="androidx.room.MultiInstanceInvalidationService"
-35-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\0c68a33d93eaf7d89e2483b7bf66ea72\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+35-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3c9f880b265ffa959111bc61dc34908c\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
 36            android:directBootAware="true"
-36-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\0c68a33d93eaf7d89e2483b7bf66ea72\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+36-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3c9f880b265ffa959111bc61dc34908c\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
 37            android:exported="false" />
-37-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\0c68a33d93eaf7d89e2483b7bf66ea72\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+37-->[androidx.room:room-runtime:2.2.5] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3c9f880b265ffa959111bc61dc34908c\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
 38
 39        <provider
-39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\8c05eeacd1191f6504479e68841ef5bb\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3461d6d288bd571ebc3352a0ff9424af\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
 40            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-40-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\8c05eeacd1191f6504479e68841ef5bb\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+40-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3461d6d288bd571ebc3352a0ff9424af\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
 41            android:authorities="com.example.android.exercisetracker.lifecycle-process"
-41-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\8c05eeacd1191f6504479e68841ef5bb\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+41-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3461d6d288bd571ebc3352a0ff9424af\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
 42            android:exported="false"
-42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\8c05eeacd1191f6504479e68841ef5bb\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3461d6d288bd571ebc3352a0ff9424af\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
 43            android:multiprocess="true" />
-43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\8c05eeacd1191f6504479e68841ef5bb\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Thorsten\.gradle\caches\transforms-2\files-2.1\3461d6d288bd571ebc3352a0ff9424af\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
 44    </application>
 45
 46</manifest>

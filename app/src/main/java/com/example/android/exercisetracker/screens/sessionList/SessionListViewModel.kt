@@ -13,15 +13,11 @@ import com.example.android.exercisetracker.data.exercises.ExerciseDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SessionListViewModel(exercise: Exercise, application: Application) : AndroidViewModel(application) {
+class SessionListViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _navigateToAdd = MutableLiveData<Boolean>()
     val navigateToAdd: LiveData<Boolean>
         get() = _navigateToAdd
-
-    private val _selectedExercise = MutableLiveData<Exercise>()
-    val selectedExercise: LiveData<Exercise>
-        get() = _selectedExercise
 
     val readAllData: LiveData<List<TrainingSession>>
 
@@ -33,7 +29,6 @@ class SessionListViewModel(exercise: Exercise, application: Application) : Andro
         repository = Repository(exerciseDao, trainingSessionDao)
         readAllData = repository.readAllData
         _navigateToAdd.value = false
-        _selectedExercise.value = exercise
     }
 
     fun navigateToAdd() {

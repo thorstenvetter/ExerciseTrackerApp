@@ -10,15 +10,11 @@ class Repository(private val exerciseDao: ExerciseDao,
                  private val trainingSessionDao: TrainingSessionDao) {
 
     val readAllExercises: LiveData<List<Exercise>> = exerciseDao.readAllExercises()
-    val readAllData: LiveData<List<TrainingSession>> = trainingSessionDao.readExerciseSessions()
+    val readAllData: LiveData<List<TrainingSession>> = trainingSessionDao.readAllData()
 
     suspend fun addExercise(exercise: Exercise){
         exerciseDao.addExercise(exercise)
     }
-
-//    suspend fun readExercise(exerciseName: String){
-//        exerciseDao.readExercise(exerciseName)
-//    }
 
     suspend fun clearAllExercises(){
         exerciseDao.clear()

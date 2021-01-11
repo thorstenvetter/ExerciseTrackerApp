@@ -40,7 +40,7 @@ class ExerciseListAdapter: ListAdapter<Exercise, RecyclerView.ViewHolder>(DiffCa
 
         fun navigateToExerciseSessions(exercise: Exercise, view: View){
             val direction = ExerciseListFragmentDirections
-                    .actionExerciseListFragmentToSessionListFragment(exercise)
+                    .actionExerciseListFragmentToSessionListFragment()
             view.findNavController().navigate(direction)
         }
 
