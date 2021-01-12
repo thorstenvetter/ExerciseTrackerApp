@@ -14,7 +14,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 
-class SessionAddViewModel(application: Application) : AndroidViewModel(application) {
+class SessionAddViewModel(private var exerciseName: String, application: Application) : AndroidViewModel(application) {
 
     private val repository: Repository
 
@@ -201,7 +201,7 @@ class SessionAddViewModel(application: Application) : AndroidViewModel(applicati
             }
             _date.value = LocalDate.now()
             result = "$resultScore% (${_successScore.value}/$totalScore)"
-            val session = TrainingSession(0, _date.value.toString(), _successScore.value.toString(),
+            val session = TrainingSession(0, exerciseName ,_date.value.toString(), _successScore.value.toString(),
                     _failScore.value.toString(), totalScore.toString(), result, timeString)
             addSession(session)
             _navigateToList.value = true

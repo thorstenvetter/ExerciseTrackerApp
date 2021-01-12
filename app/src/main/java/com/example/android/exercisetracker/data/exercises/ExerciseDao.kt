@@ -12,7 +12,7 @@ interface ExerciseDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addExercise(exercise: Exercise)
 
-    @Query("SELECT * FROM exercises_table")
+    @Query("SELECT * FROM exercises_table ORDER BY id DESC")
     fun readAllExercises(): LiveData<List<Exercise>>
 
     @Query("DELETE FROM exercises_table")

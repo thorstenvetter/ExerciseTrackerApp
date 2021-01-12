@@ -8,6 +8,7 @@ import com.example.android.exercisetracker.data.exercises.Exercise
 data class TrainingSession(
         @PrimaryKey(autoGenerate = true)
         val id: Int,
+        val exerciseName: String,
         val dateString: String,
         val successScore: String,
         val failScore: String,

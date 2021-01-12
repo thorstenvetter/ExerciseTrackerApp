@@ -13,10 +13,6 @@ class ExerciseListViewModel(application: Application) : AndroidViewModel(applica
     val navigateToExerciseAdd: LiveData<Boolean>
         get() = _navigateToExerciseAdd
 
-    private var _navigateToSessionList = MutableLiveData<Boolean>()
-    val navigateToSessionList: LiveData<Boolean>
-        get() = _navigateToSessionList
-
     val readAllExercises: LiveData<List<Exercise>>
 
     private val repository: Repository
@@ -28,8 +24,6 @@ class ExerciseListViewModel(application: Application) : AndroidViewModel(applica
         readAllExercises = repository.readAllExercises
         _navigateToExerciseAdd.value = false
     }
-
-    val exercises: LiveData<List<Exercise>> = repository.readAllExercises
 
     fun navigateToAddExercise(){
         _navigateToExerciseAdd.value = true

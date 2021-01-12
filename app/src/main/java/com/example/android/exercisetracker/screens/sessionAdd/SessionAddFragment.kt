@@ -13,6 +13,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.android.exercisetracker.R
 import com.example.android.exercisetracker.databinding.FragmentSessionAddBinding
+import com.example.android.exercisetracker.screens.sessionList.SessionListFragmentArgs
+import com.example.android.exercisetracker.screens.sessionList.SessionListViewModelFactory
 
 class SessionAddFragment : Fragment() {
 
@@ -24,7 +26,13 @@ class SessionAddFragment : Fragment() {
         val binding: FragmentSessionAddBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_session_add, container, false)
 
-        val sessionAddViewModel = ViewModelProvider(this).get(SessionAddViewModel::class.java)
+        @Suppress("UNUSED_VARIABLE")
+        val application = requireNotNull(activity).application
+
+        val exerciseName = SessionAddFragmentArgs.fromBundle(requireArguments()).exerciseName
+        val viewModelFactory = SessionAddViewModelFactory(exerciseName, application)
+
+        val sessionAddViewModel = ViewModelProvider(this, viewModelFactory).get(SessionAddViewModel::class.java)
         binding.sessionAddViewModel = sessionAddViewModel
         binding.lifecycleOwner = this
 
