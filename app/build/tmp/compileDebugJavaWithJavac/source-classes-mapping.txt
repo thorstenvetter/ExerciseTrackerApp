@@ -4,45 +4,6 @@ com/example/android/exercisetracker/BR.java
  com.example.android.exercisetracker.BR
 com/example/android/exercisetracker/databinding/ExerciseListItemBinding.java
  com.example.android.exercisetracker.databinding.ExerciseListItemBinding
-com/example/android/exercisetracker/databinding/ExerciseListFragmentBinding.java
- com.example.android.exercisetracker.databinding.ExerciseListFragmentBinding
-androidx/databinding/DataBinderMapperImpl.java
- androidx.databinding.DataBinderMapperImpl
-com/example/android/exercisetracker/databinding/FragmentSessionListBindingLandImpl.java
- com.example.android.exercisetracker.databinding.FragmentSessionListBindingLandImpl
-com/example/android/exercisetracker/databinding/ExerciseListItemBindingImpl.java
- com.example.android.exercisetracker.databinding.ExerciseListItemBindingImpl
-com/example/android/exercisetracker/databinding/FragmentSessionAddBindingLandImpl.java
- com.example.android.exercisetracker.databinding.FragmentSessionAddBindingLandImpl
-com/example/android/exercisetracker/DataBindingTriggerClass.java
- com.example.android.exercisetracker.DataBindingTriggerClass
-com/example/android/exercisetracker/databinding/ExerciseAddFragmentBinding.java
- com.example.android.exercisetracker.databinding.ExerciseAddFragmentBinding
-com/example/android/exercisetracker/databinding/FragmentSessionAddBinding.java
- com.example.android.exercisetracker.databinding.FragmentSessionAddBinding
-com/example/android/exercisetracker/data/exercises/ExerciseDatabase_Impl.java
- com.example.android.exercisetracker.data.exercises.ExerciseDatabase_Impl
- com.example.android.exercisetracker.data.exercises.ExerciseDatabase_Impl$1
-androidx/databinding/library/baseAdapters/BR.java
- androidx.databinding.library.baseAdapters.BR
-com/example/android/exercisetracker/data/trainingsessions/TrainingSessionDatabase_Impl.java
- com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase_Impl
- com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase_Impl$1
-com/example/android/exercisetracker/databinding/FragmentSessionListBinding.java
- com.example.android.exercisetracker.databinding.FragmentSessionListBinding
-com/example/android/exercisetracker/generated/callback/OnClickListener.java
- com.example.android.exercisetracker.generated.callback.OnClickListener
- com.example.android.exercisetracker.generated.callback.OnClickListener$Listener
-com/example/android/exercisetracker/databinding/FragmentSessionAddBindingImpl.java
- com.example.android.exercisetracker.databinding.FragmentSessionAddBindingImpl
-com/example/android/exercisetracker/databinding/ExerciseListFragmentBindingImpl.java
- com.example.android.exercisetracker.databinding.ExerciseListFragmentBindingImpl
-com/example/android/exercisetracker/databinding/ExerciseAddFragmentBindingImpl.java
- com.example.android.exercisetracker.databinding.ExerciseAddFragmentBindingImpl
-com/example/android/exercisetracker/DataBinderMapperImpl.java
- com.example.android.exercisetracker.DataBinderMapperImpl
- com.example.android.exercisetracker.DataBinderMapperImpl$InnerBrLookup
- com.example.android.exercisetracker.DataBinderMapperImpl$InnerLayoutIdLookup
 com/example/android/exercisetracker/data/exercises/ExerciseDao_Impl.java
  com.example.android.exercisetracker.data.exercises.ExerciseDao_Impl
  com.example.android.exercisetracker.data.exercises.ExerciseDao_Impl$1
@@ -50,6 +11,14 @@ com/example/android/exercisetracker/data/exercises/ExerciseDao_Impl.java
  com.example.android.exercisetracker.data.exercises.ExerciseDao_Impl$3
  com.example.android.exercisetracker.data.exercises.ExerciseDao_Impl$4
  com.example.android.exercisetracker.data.exercises.ExerciseDao_Impl$5
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/example/android/exercisetracker/DataBinderMapperImpl.java
+ com.example.android.exercisetracker.DataBinderMapperImpl
+ com.example.android.exercisetracker.DataBinderMapperImpl$InnerBrLookup
+ com.example.android.exercisetracker.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/android/exercisetracker/databinding/ExerciseListItemBindingImpl.java
+ com.example.android.exercisetracker.databinding.ExerciseListItemBindingImpl
 com/example/android/exercisetracker/data/trainingsessions/TrainingSessionDao_Impl.java
  com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDao_Impl
  com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDao_Impl$1
@@ -58,7 +27,35 @@ com/example/android/exercisetracker/data/trainingsessions/TrainingSessionDao_Imp
  com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDao_Impl$4
  com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDao_Impl$5
  com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDao_Impl$6
+com/example/android/exercisetracker/DataBindingTriggerClass.java
+ com.example.android.exercisetracker.DataBindingTriggerClass
 androidx/databinding/DataBindingComponent.java
  androidx.databinding.DataBindingComponent
+com/example/android/exercisetracker/generated/callback/OnClickListener.java
+ com.example.android.exercisetracker.generated.callback.OnClickListener
+ com.example.android.exercisetracker.generated.callback.OnClickListener$Listener
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/example/android/exercisetracker/data/AppDatabase_Impl.java
+ com.example.android.exercisetracker.data.AppDatabase_Impl
+ com.example.android.exercisetracker.data.AppDatabase_Impl$1
+com/example/android/exercisetracker/databinding/ExerciseListFragmentBindingImpl.java
+ com.example.android.exercisetracker.databinding.ExerciseListFragmentBindingImpl
+com/example/android/exercisetracker/databinding/ExerciseListFragmentBinding.java
+ com.example.android.exercisetracker.databinding.ExerciseListFragmentBinding
+com/example/android/exercisetracker/databinding/ExerciseAddFragmentBindingImpl.java
+ com.example.android.exercisetracker.databinding.ExerciseAddFragmentBindingImpl
+com/example/android/exercisetracker/databinding/FragmentSessionListBindingLandImpl.java
+ com.example.android.exercisetracker.databinding.FragmentSessionListBindingLandImpl
+com/example/android/exercisetracker/databinding/FragmentSessionAddBindingLandImpl.java
+ com.example.android.exercisetracker.databinding.FragmentSessionAddBindingLandImpl
+com/example/android/exercisetracker/databinding/ExerciseAddFragmentBinding.java
+ com.example.android.exercisetracker.databinding.ExerciseAddFragmentBinding
+com/example/android/exercisetracker/databinding/FragmentSessionAddBinding.java
+ com.example.android.exercisetracker.databinding.FragmentSessionAddBinding
+com/example/android/exercisetracker/databinding/FragmentSessionListBinding.java
+ com.example.android.exercisetracker.databinding.FragmentSessionListBinding
+com/example/android/exercisetracker/databinding/FragmentSessionAddBindingImpl.java
+ com.example.android.exercisetracker.databinding.FragmentSessionAddBindingImpl
 com/example/android/exercisetracker/databinding/FragmentSessionListBindingImpl.java
  com.example.android.exercisetracker.databinding.FragmentSessionListBindingImpl

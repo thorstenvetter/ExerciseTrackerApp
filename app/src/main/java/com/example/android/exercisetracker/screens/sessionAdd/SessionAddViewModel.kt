@@ -7,9 +7,8 @@ import android.text.TextWatcher
 import android.text.format.DateUtils
 import androidx.lifecycle.*
 import com.example.android.exercisetracker.data.trainingsessions.TrainingSession
-import com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.AppDatabase
 import com.example.android.exercisetracker.data.Repository
-import com.example.android.exercisetracker.data.exercises.ExerciseDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -77,8 +76,8 @@ class SessionAddViewModel(private var exerciseName: String, application: Applica
         get() = _navigateToList
 
     init {
-        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
+        val exerciseDao = AppDatabase.getDatabase(application).exerciseDao()
+        val trainingSessionDao = AppDatabase.getDatabase(application).trainingSessionDao()
         repository = Repository(exerciseDao, trainingSessionDao)
         _navigateToList.value = false
         _successScore.value = 0

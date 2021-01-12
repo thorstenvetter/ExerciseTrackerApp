@@ -4,8 +4,7 @@ import android.app.Application
 import androidx.lifecycle.*
 import com.example.android.exercisetracker.data.Repository
 import com.example.android.exercisetracker.data.exercises.Exercise
-import com.example.android.exercisetracker.data.exercises.ExerciseDatabase
-import com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.AppDatabase
 
 class ExerciseListViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -18,8 +17,8 @@ class ExerciseListViewModel(application: Application) : AndroidViewModel(applica
     private val repository: Repository
 
     init {
-        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
+        val exerciseDao = AppDatabase.getDatabase(application).exerciseDao()
+        val trainingSessionDao = AppDatabase.getDatabase(application).trainingSessionDao()
         repository = Repository(exerciseDao, trainingSessionDao)
         readAllExercises = repository.readAllExercises
         _navigateToExerciseAdd.value = false

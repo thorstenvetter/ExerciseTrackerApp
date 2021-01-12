@@ -1,15 +1,10 @@
 package com.example.android.exercisetracker.screens.exerciseAdd
 
 import android.app.Application
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.lifecycle.*
 import com.example.android.exercisetracker.data.Repository
 import com.example.android.exercisetracker.data.exercises.Exercise
-import com.example.android.exercisetracker.data.exercises.ExerciseDao
-import com.example.android.exercisetracker.data.exercises.ExerciseDatabase
-import com.example.android.exercisetracker.data.trainingsessions.TrainingSession
-import com.example.android.exercisetracker.data.trainingsessions.TrainingSessionDatabase
+import com.example.android.exercisetracker.data.AppDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -25,8 +20,8 @@ class ExerciseAddViewModel(application: Application) : AndroidViewModel(applicat
         get() = _navigateToExerciseList
 
     init {
-        val exerciseDao = ExerciseDatabase.getDatabase(application).exerciseDao()
-        val trainingSessionDao = TrainingSessionDatabase.getDatabase(application).trainingSessionDao()
+        val exerciseDao = AppDatabase.getDatabase(application).exerciseDao()
+        val trainingSessionDao = AppDatabase.getDatabase(application).trainingSessionDao()
         repository = Repository(exerciseDao, trainingSessionDao)
         readExercise = repository.readAllExercises
         _navigateToExerciseList.value = false
